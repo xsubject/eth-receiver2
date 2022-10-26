@@ -9,7 +9,7 @@
     "start": "ts-node src/index.ts",
     "test": "npx hardhat test"
   },
-  "license": "ISC",
+  "license": "GPL-3.0",
   "husky": {
     "hooks": {
       "pre-commit": "npx pretty-quick --staged"
