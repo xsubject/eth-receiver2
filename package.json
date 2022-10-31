@@ -2,8 +2,8 @@
   "name": "eth-receiver2",
   "main": "build/src/index.js",
   "scripts": {
-    "prepare": "tsc",
-    "build": "tsc",
+    "prepare": "tsc -d true",
+    "build": "tsc -d true",
     "start": "ts-node src/index.ts",
     "test": "npx hardhat test"
   },
