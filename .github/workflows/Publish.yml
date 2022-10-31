@@ -3,7 +3,7 @@ on:
   push:
     tags:
       - '*.*.*'
-      
+
 jobs:
   push:
     runs-on: ubuntu-latest
@@ -22,9 +22,6 @@ jobs:
         uses: dawidd6/action-get-tag@v1
         with:
           strip_v: true
-      - run: npx yarn
-      - run: npx yarn build
-
-      - run: npx yarn publish --tag ${{steps.tag.outputs.tag}}
+      - run: npx yarn && npx yarn build && npx yarn publish --tag ${{steps.tag.outputs.tag}}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
