@@ -22,6 +22,6 @@ jobs:
         uses: dawidd6/action-get-tag@v1
         with:
           strip_v: true
-      - run: npm && npm build && && npm version ${{steps.tag.outputs.tag}} && npm publish
+      - run: npm install --frozen-lockfile && npm build && npm version ${{steps.tag.outputs.tag}} && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
