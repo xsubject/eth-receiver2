@@ -10,12 +10,19 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
+          always-auth: true
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           # Defaults to the user or organization that owns the workflow file
           # scope: '@octocat'
+      - name: Get tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
+        with:
+          strip_v: true
       - run: npx yarn
       - run: npx yarn build
-      - run: npx yarn publish
+
+      - run: npx yarn publish --tag ${{steps.tag.outputs.tag}}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

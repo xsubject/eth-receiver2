@@ -1,6 +1,5 @@
 {
   "name": "eth-receiver2",
-  "version": "1.0.6",
   "main": "bin/src/index.js",
   "scripts": {
     "prepare": "tsc",
