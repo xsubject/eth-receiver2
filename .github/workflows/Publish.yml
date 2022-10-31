@@ -1,7 +1,9 @@
 name: Publish Package to npm
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - '*.*.*'
+      
 jobs:
   push:
     runs-on: ubuntu-latest
