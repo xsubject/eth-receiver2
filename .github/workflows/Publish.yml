@@ -22,6 +22,7 @@ jobs:
         uses: dawidd6/action-get-tag@v1
         with:
           strip_v: true
+      - run: git config --global user.email "const.subject@gmail.com" && git config --global user.name "Automation"
       - run: npm version ${{steps.tag.outputs.tag}}
       - run: npm install --frozen-lockfile
       - run: npm run build 
