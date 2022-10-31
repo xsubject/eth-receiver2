@@ -1,6 +1,6 @@
 {
   "name": "eth-receiver2",
-  "main": "bin/src/index.js",
+  "main": "build/src/index.js",
   "scripts": {
     "prepare": "tsc",
     "build": "tsc",
